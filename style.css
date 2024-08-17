@@ -23,9 +23,9 @@ ul {
 header {
     display: flex;
     justify-content: space-between;
-    padding-top: 60px;
     padding-left: 60px;
-    padding-right: 60px
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 a {
@@ -49,8 +49,8 @@ a {
     padding: 15px
 }
 
-.news .title {
-    font-weight: 700;
+.news h2 {
+    color: hsl(36, 100%, 99%);
 }
 
 .news p {
@@ -65,6 +65,20 @@ input[type="submit"] {
     font-weight: 700;
     padding: 14px;
     width: 50%
+}
+
+a h2:hover{
+    color: hsl(35, 77%, 62%)
+}
+
+li a:hover{
+    color: hsl(5, 85%, 63%)
+}
+
+input[type="submit"]:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer
 }
 
 .main-image-desktop {
@@ -82,7 +96,7 @@ input[type="submit"] {
     margin: 0
 }
 
-.news span {
+.news h1 {
     color: hsl(35, 77%, 62%);
     font-weight: 700;
     font-size: 2rem;
@@ -94,10 +108,10 @@ input[type="submit"] {
 }
 
 #main-title {
-    font-weight: 900;
-    font-size: 3rem;
     margin: 0;
     padding: 0;
+    font-weight: 900;
+    font-size: 3rem
 }
 
 .number {
@@ -107,8 +121,13 @@ input[type="submit"] {
 }
 
 .extra-article span {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.1rem;
+}
+
+.extra-article span:hover{
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
 }
 
 .description {
@@ -150,6 +169,8 @@ input[type="submit"] {
     #toggle-navigation {
         display: inline-block;
         cursor: pointer;
+        border: none;
+        background-color: white;
     }
 
     #toggle-navigation.active+nav ul {
@@ -191,13 +212,14 @@ input[type="submit"] {
         width: 100%;
         margin: 0;
         box-sizing: border-box;
-        padding-top: 0px
+        padding-top: 0px;
+        align-items: center;
     }
 
     .icon-navigation{
+        display: flex;
         justify-content: end;
-        padding: 0;
-        margin: 0
+        align-items: center;
     }
 }
 
