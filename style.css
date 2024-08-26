@@ -18,14 +18,26 @@
 ul {
     list-style-type: none;
     display: flex;
+    width: 100%;
+    padding-right: 40px;
+}
+
+#menu-close {
+    display: none;
+    border: none;
+    background: none;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     padding-left: 60px;
-    padding-right: 15px;
     box-sizing: border-box;
+    width: 100%
+}
+
+nav {
+    margin-left: auto;
 }
 
 a {
@@ -67,15 +79,15 @@ input[type="submit"] {
     width: 50%
 }
 
-a h2:hover{
+a h2:hover {
     color: hsl(35, 77%, 62%)
 }
 
-li a:hover{
+li a:hover {
     color: hsl(5, 85%, 63%)
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: black;
     color: white;
     cursor: pointer
@@ -125,7 +137,7 @@ input[type="submit"]:hover{
     font-size: 1.1rem;
 }
 
-.extra-article span:hover{
+.extra-article span:hover {
     color: hsl(5, 85%, 63%);
     cursor: pointer;
 }
@@ -160,21 +172,32 @@ input[type="submit"]:hover{
     display: none
 }
 
+#menu-button {
+    display: none
+}
+
+li {
+    margin-right: 20px;
+}
+
+
 @media(max-width: 375px) {
     ul {
         display: none;
-        flex-direction: column;
     }
 
-    #toggle-navigation {
-        display: inline-block;
-        cursor: pointer;
-        border: none;
+    nav {
+        width: 100%
+    }
+
+    nav.open {
+        position: fixed;
+        top: 0;
+        right: 0;
         background-color: white;
-    }
-
-    #toggle-navigation.active+nav ul {
-        display: flex;
+        padding: 0;
+        width: auto;
+        height: 100%
     }
 
     .container {
@@ -182,6 +205,7 @@ input[type="submit"]:hover{
         flex-direction: column;
         width: 100%;
         margin: 0;
+        padding-inline: 0px;
     }
 
     .additional {
@@ -205,24 +229,54 @@ input[type="submit"]:hover{
     }
 
     .main-image-desktop {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0px;
+        padding-right: 0px;
+        box-sizing: border-box;
+    }
+
+    .menu-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 15px;
+    }
+
+    nav.open ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        margin-left: 0
+    }
+
+    nav.open li {
+        line-height: 200%
+    }
+
+    #menu-button {
+        display: inline-block;
+        background-color: white;
+        border: none
+    }
+
+    nav.open #menu-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav.open #menu-button {
         display: none
     }
 
-    header{
-        width: 100%;
-        margin: 0;
-        box-sizing: border-box;
-        padding-top: 0px;
-        align-items: center;
-    }
-
-    .icon-navigation{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-    }
 }
 
-header img{
+header img {
     max-width: 100%
 }
